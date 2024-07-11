@@ -6,6 +6,7 @@ cc -Wall -Wextra -Werror -c parsing.c -o parsing.o
 cc -Wall -Wextra -Werror -c split.c -o split.o
 cc -Wall -Wextra -Werror -c utils.c -o utils.o
 cc -Wall -Wextra -Werror -c ft_strjoin.c -o ft_strjoin.o
-cc -Wall -Wextra -Werror -o push_swap push_swap.o parsing.o split.o utils.o ft_strjoin.o
+cc -Wall -Wextra -Werror -c ft_atoi.c -o ft_atoi.o
+cc -Wall -Wextra -Werror -o push_swap push_swap.o parsing.o split.o utils.o ft_strjoin.o ft_atoi.o
 make: Leaving directory `/Users/mes-salh/Desktop/ps'
  

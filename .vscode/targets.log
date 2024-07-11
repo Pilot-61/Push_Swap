@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Jul 11 23:47:58 2024
+# Make data base, printed on Fri Jul 12 00:07:30 2024
 
 # Variables
 
@@ -19,9 +19,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # makefile (from `Makefile', line 16)
 OBJ = $(SRC:.c=.o)
 # environment
+ 
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # makefile (from `Makefile', line 15)
-SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c
+SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c ft_atoi.c
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -39,7 +40,6 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 19)
 CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
- 
 MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_CWD = /
@@ -184,9 +184,9 @@ VSCODE_PID = 8828
 
 # Directories
 
-# . (device 16777225, inode 4438904): 17 files, no impossibilities.
+# . (device 16777225, inode 4438904): 12 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -202,7 +202,7 @@ VSCODE_PID = 8828
 # Not a target:
 push_swap.c:
 #  Implicit rule search has been done.
-#  Last modified 2024-07-11 23:41:25
+#  Last modified 2024-07-11 23:51:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -232,7 +232,7 @@ ft_strjoin.o:
 # Not a target:
 push_swap.h:
 #  Implicit rule search has been done.
-#  Last modified 2024-07-11 23:47:52
+#  Last modified 2024-07-11 23:48:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -247,7 +247,7 @@ push_swap.h:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-07-11 23:47:57
+#  Last modified 2024-07-12 00:07:27
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -286,7 +286,7 @@ clean:
 push_swap.o: push_swap.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `push_swap'
-#  Last modified 2024-07-11 23:47:13
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -304,16 +304,16 @@ push_swap.o: push_swap.c push_swap.h
 # automatic
 # ^ := push_swap.c push_swap.h
 # automatic
-# ? := push_swap.h
+# ? := push_swap.c push_swap.h
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
 #  commands to execute (from `Makefile', line 29):
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 
-push_swap: push_swap.o parsing.o split.o utils.o ft_strjoin.o
+push_swap: push_swap.o parsing.o split.o utils.o ft_strjoin.o ft_atoi.o
 #  Implicit rule search has not been done.
-#  Last modified 2024-07-11 23:47:23
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -340,8 +340,15 @@ split.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+ft_atoi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/47=0%
+ 
+# Load=17/1024=2%, Rehash=0, Collisions=0/49=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -353,6 +360,6 @@ split.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jul 11 23:47:58 2024
+# Finished Make data base on Fri Jul 12 00:07:30 2024
 
  

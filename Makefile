@@ -6,13 +6,13 @@
 #    By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/11 23:47:56 by mes-salh          #+#    #+#              #
-#    Updated: 2024/07/11 23:47:57 by mes-salh         ###   ########.fr        #
+#    Updated: 2024/07/12 00:07:27 by mes-salh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c
+SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c ft_atoi.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc
