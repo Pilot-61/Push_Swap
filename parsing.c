@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 23:55:21 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/11 23:48:39 by mes-salh         ###   ########.fr       */
+/*   Created: 2024/07/11 23:38:41 by mes-salh          #+#    #+#             */
+/*   Updated: 2024/07/11 23:53:07 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libc.h"
+#include "push_swap.h"
 
-typedef struct s_list
+void	mes_pars(char *str)
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+	int	i;
 
-void	ft_lstadd_back(t_list **lst, t_list *news);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstnew(void *content);
-char	*ft_strjoin(int size, char **strs, char *sep);
-void	ft_putstr(char *s);
-char	**ft_split(char const *s, char c);
-void	mes_pars(char *str);
-#endif
+	i = 0;
+	if (!str)
+		ft_putstr("invalid argument\n");
+	while (str[i])
+	{
+		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == ' '))
+			ft_putstr("arguments must be only numbers");
+		i++;
+	}
+}

@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 23:55:21 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/11 23:48:39 by mes-salh         ###   ########.fr       */
+/*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
+/*   Updated: 2024/07/11 23:51:13 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libc.h"
+#include "push_swap.h"
 
-typedef struct s_list
+int	main(int ac, char **av)
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+	char	*str;
 
-void	ft_lstadd_back(t_list **lst, t_list *news);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstnew(void *content);
-char	*ft_strjoin(int size, char **strs, char *sep);
-void	ft_putstr(char *s);
-char	**ft_split(char const *s, char c);
-void	mes_pars(char *str);
-#endif
+	str = ft_strjoin(ac - 1, av + 1, " ");
+	mes_pars(str);
+}
