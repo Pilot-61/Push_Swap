@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 23:38:41 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 18:06:53 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:43:53 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	mes_pars(char *str)
 	i = 0;
 	j = 0;
 	if (!str)
-		ft_putstr("invalid argument\n");
+		ft_putstr("Error\n");
 	// while (str[i])
 	// {
 	// 	if (!((str[i] >= '0' && str[i] <= '9')

@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 18:06:24 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:48:18 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 	{
-		ft_putstr("usage : ./push_swap [nbr1] [nbr2] ...\n");
+		ft_putstr("Error : Invalide Number Of Args\n");
 		return (EXIT_FAILURE);
 	}
 	i = 1;
@@ -62,7 +62,7 @@ int	main(int ac, char **av)
 	{
 		if (!is_valid_number(av[i]))
 		{
-			ft_putstr("The Arguments must be numbers with only one sign\n");
+			ft_putstr("Error : The Args Must Be Numbers With Only One Sign At The Beginning\n");
 			return (EXIT_FAILURE);
 		}
 		i++;

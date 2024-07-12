@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 00:06:50 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 17:51:52 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:48:41 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@ static int	mes_pnbr(int i, long nb, int sign, const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = (nb * 10) + (str[i] - 48);
-		if (nb < 0 && sign == -1)
-			return (0);
-		else if (nb < 0 && sign == 1)
-			return (-1);
+		if (nb > 2147483647 && sign == 1)
+		{
+			ft_putstr("Error : Invalid Number\n");
+			exit(EXIT_FAILURE);
+		}
+		else if (nb > 2147483648 && sign == -1)
+		{
+			ft_putstr("Error : Invalid Number\n");
+			exit(EXIT_FAILURE);
+		}
 		i++;
 	}
 	return ((int)(nb * sign));
