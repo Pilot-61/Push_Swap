@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:55:21 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 00:16:11 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/12 01:36:17 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 void	ft_putstr(char *s);
 char	**ft_split(char const *s, char c);
 void	mes_pars(char *str);
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 #endif

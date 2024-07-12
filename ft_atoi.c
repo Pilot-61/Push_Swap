@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 00:06:50 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 00:25:03 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/12 17:51:52 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ static int	mes_pnbr(int i, long nb, int sign, const char *str)
 			return (-1);
 		i++;
 	}
-	if (str[i] == '\0')
-		return ((int)(nb * sign));
-	ft_putstr("invalid number /numbers should have only one sign");
-	exit(1);
+	return ((int)(nb * sign));
 }
 
 int	ft_atoi(const char *str)
@@ -45,11 +42,6 @@ int	ft_atoi(const char *str)
 		if (str[i] == '-')
 			sign = -1;
 		i++;
-	}
-	if (str[i] == '-' || str[i] == '+')
-	{
-		ft_putstr("invalid number /numbers should have only one sign");
-		exit(1);
 	}
 	return (mes_pnbr(i, nb, sign, str));
 }
