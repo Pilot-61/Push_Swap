@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 00:06:50 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 19:48:41 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/13 00:05:17 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static int	mes_pnbr(int i, long nb, int sign, const char *str)
 		nb = (nb * 10) + (str[i] - 48);
 		if (nb > 2147483647 && sign == 1)
 		{
-			ft_putstr("Error : Invalid Number\n");
+			ft_putstr(2, "Error");
 			exit(EXIT_FAILURE);
 		}
 		else if (nb > 2147483648 && sign == -1)
 		{
-			ft_putstr("Error : Invalid Number\n");
+			ft_putstr(2, "Error");
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	nb = 0;
-	while(str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{

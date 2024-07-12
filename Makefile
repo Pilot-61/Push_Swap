@@ -6,7 +6,7 @@
 #    By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/11 23:47:56 by mes-salh          #+#    #+#              #
-#    Updated: 2024/07/12 01:08:28 by mes-salh         ###   ########.fr        #
+#    Updated: 2024/07/12 23:04:18 by mes-salh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c ft_atoi.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 HEADER = push_swap.h
 

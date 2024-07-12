@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 19:48:18 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/13 00:58:51 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@ int	is_num(int c)
 	return (c >= '0' && c <= '9');
 }
 
+void	free_arr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
 int	is_valid_number(const char *str)
 {
 	char	**splited;
@@ -24,50 +37,49 @@ int	is_valid_number(const char *str)
 	int		j;
 
 	splited = ft_split(str, ' ');
-	j = 0;
-	while (splited[j])
+	if (!splited || !splited[0])
+		return (free_arr(splited), 0);
+	j = -1;
+	while (splited[++j])
 	{
 		i = 0;
 		while (splited[j][i] == ' ')
 			i++;
-		if (splited[j][i] == '-' || splited[j][i] == '+')
-		{
-			i++;
+		if (splited[j][i++] == '-' || splited[j][i] == '+')
 			if (!is_num(splited[j][i]))
-				return (0);
-		}
+				return (free_arr(splited), 0);
 		while (splited[j][i])
 		{
 			if (!is_num(splited[j][i]))
-				return (0);
+				return (free_arr(splited), 0);
 			i++;
 		}
-		j++;
 	}
-	return (1);
+	return (free_arr(splited), 1);
 }
+
+// void hello(void){system("leaks push_swap");}
 
 int	main(int ac, char **av)
 {
+	// atexit(hello);
+	t_list	*stack_a;
+	t_list	*stack_b;
 	char	*str;
 	int		i;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (ac < 2)
-	{
-		ft_putstr("Error : Invalide Number Of Args\n");
-		return (EXIT_FAILURE);
-	}
-	i = 1;
-	while (i < ac)
-	{
+		return (ft_putstr(2, "Error"), EXIT_FAILURE);
+	i = 0;
+	while (++i < ac)
 		if (!is_valid_number(av[i]))
-		{
-			ft_putstr("Error : The Args Must Be Numbers With Only One Sign At The Beginning\n");
-			return (EXIT_FAILURE);
-		}
-		i++;
-	}
+			return (ft_putstr(2, "Error"), EXIT_FAILURE);
 	str = ft_strjoin(ac - 1, av + 1, " ");
-	mes_pars(str);
+	if (!str)
+		return (0);
+	if (!mes_pars(str, stack_a))
+		return (ft_putstr(2, "Error"), 1);
 	return (0);
 }

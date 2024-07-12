@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 23:38:41 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/12 19:43:53 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/13 00:57:09 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,89 +27,92 @@ static int	mes_len(const char *s, char c)
 			counter++;
 		}
 		else if (*s == c)
-		{
 			existe = 0;
-		}
 		s++;
 	}
 	return (counter);
 }
 
-// int	checker(char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (str[i])
-// 	{
-// 		if (str[i] == ' ')
-// 			i++;
-// 		if (str[i] == '+' || str[i] == '-')
-// 			i++;
-// 		while (str[i] >= '0' && str[i] <= '9')
-// 			i++;
-// 		if (str[i] == '+' || str[i] == '-')
-// 			return (0);
-// 		i++;
-// 	}
-// 	return (1);
-// }
-
-void	mes_pars(char *str)
+void	fill_stack(t_list *stack, int *nbrs, int size)
 {
-	int		i;
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_lstadd_back(&stack, ft_lstnew(nbrs[i]));
+		i++;
+	}
+	while (stack)
+	{
+		printf("%d\n", stack->content);
+		stack = stack->next;
+	}
+}
+
+void	swap(int a, int b)
+{
+	int	temp;
+
+	temp = a;
+	a = b;
+	b = temp;
+}
+
+int	check_dup(int *nbrs, int n)
+{
+	int	i;
+	int	j;
+	int	swapped;
+
+	i = -1;
+	while (++i < n - 1)
+	{
+		swapped = 0;
+		j = -1;
+		while (++j < n - i - 1)
+		{
+			if (nbrs[j] > nbrs[j + 1])
+			{
+				swap(nbrs[j], nbrs[j + 1]);
+				swapped = 1;
+			}
+		}
+		if (!swapped)
+			break ;
+	}
+	i = -1;
+	while (++i < n - 1)
+		if (nbrs[i] == nbrs[i + 1])
+			return (0);
+	return (1);
+}
+
+int	mes_pars(char *str, t_list *stack_a)
+{
 	int		wordcount;
 	int		*nbrs;
 	int		j;
 	char	**split_str;
+	int		*tmp;
 
-	i = 0;
+	(void)stack_a;
 	j = 0;
 	if (!str)
-		ft_putstr("Error\n");
-	// while (str[i])
-	// {
-	// 	if (!((str[i] >= '0' && str[i] <= '9')
-	// 			|| str[i] == ' ' || str[i] == '+' || str[i] == '-'))
-	// 	{
-	// 		ft_putstr("arguments must be only numbers");
-	// 		free(str);
-	// 		exit(1);
-	// 	}
-	// 	i++;
-	// }
-	// if (!checker(str))
-	// {
-	// 	ft_putstr("arguments must be only numbers with sign at the begin only");
-	// 	exit(1);
-	// }
+		ft_putstr(2, "Error");
 	wordcount = mes_len(str, ' ');
 	nbrs = malloc(sizeof(int) * wordcount);
 	if (!nbrs)
-	{
-		ft_putstr("Memory allocation failed\n");
-		return ;
-	}
+		return (free(str), 0);
 	split_str = ft_split(str, ' ');
 	if (!split_str)
-	{
-		ft_putstr("Splitting string failed\n");
-		free(nbrs);
-		return ;
-	}
-	j = 0;
-	while (j < wordcount)
-	{
+		return (free(nbrs), free(str), 0);
+	j = -1;
+	while (++j < wordcount)
 		nbrs[j] = ft_atoi(split_str[j]);
-		printf("Number %d: %d\n", j, nbrs[j]);
-		j++;
-	}
-	j = 0;
-	while (split_str[j])
-	{
-		free(split_str[j]);
-		j++;
-	}
-	free(split_str);
-	free(nbrs);
+	tmp = nbrs;
+	if (!check_dup(tmp, j))
+		return (free_arr(split_str), free(nbrs), 0);
+	fill_stack(stack_a, nbrs, j);
+	return (free_arr(split_str), free(nbrs), 1);
 }

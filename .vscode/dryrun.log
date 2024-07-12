@@ -1,12 +1,12 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/mes-salh/Desktop/ps'
-cc -Wall -Wextra -Werror -c push_swap.c -o push_swap.o
+cc -Wall -Wextra -Werror -fsanitize=address -g -c push_swap.c -o push_swap.o
  
-cc -Wall -Wextra -Werror -c parsing.c -o parsing.o
-cc -Wall -Wextra -Werror -c split.c -o split.o
-cc -Wall -Wextra -Werror -c utils.c -o utils.o
-cc -Wall -Wextra -Werror -c ft_strjoin.c -o ft_strjoin.o
-cc -Wall -Wextra -Werror -c ft_atoi.c -o ft_atoi.o
-cc -Wall -Wextra -Werror -o push_swap push_swap.o parsing.o split.o utils.o ft_strjoin.o ft_atoi.o
+cc -Wall -Wextra -Werror -fsanitize=address -g -c parsing.c -o parsing.o
+cc -Wall -Wextra -Werror -fsanitize=address -g -c split.c -o split.o
+cc -Wall -Wextra -Werror -fsanitize=address -g -c utils.c -o utils.o
+cc -Wall -Wextra -Werror -fsanitize=address -g -c ft_strjoin.c -o ft_strjoin.o
+cc -Wall -Wextra -Werror -fsanitize=address -g -c ft_atoi.c -o ft_atoi.o
+cc -Wall -Wextra -Werror -fsanitize=address -g -o push_swap push_swap.o parsing.o split.o utils.o ft_strjoin.o ft_atoi.o
 make: Leaving directory `/Users/mes-salh/Desktop/ps'
  
