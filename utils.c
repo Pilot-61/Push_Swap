@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:34:14 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/13 00:27:19 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/13 04:35:55 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,19 @@ void	ft_putstr(int fd, char *s)
 	while (*s)
 		write(fd, s++, 1);
 	write(fd, "\n", 1);
+}
+
+void	free_stack(t_list **stack)
+{
+	t_list	*tmp;
+
+	if (!stack || !*stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
 }

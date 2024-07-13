@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat Jul 13 00:26:24 2024
+# Make data base, printed on Sat Jul 13 04:48:04 2024
 
 # Variables
 
@@ -16,13 +16,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# makefile (from `Makefile', line 16)
+# makefile (from `Makefile', line 17)
 OBJ = $(SRC:.c=.o)
 # environment
- 
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # makefile (from `Makefile', line 15)
-SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c ft_atoi.c
+SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c ft_atoi.c push.c swap.c rotate.c rev_rotate.c
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -30,23 +29,25 @@ SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c ft_atoi.c
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/mes-salh/Desktop/ps
+CURDIR := /Users/mes-salh/Desktop/pushswap
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile (from `Makefile', line 19)
+# makefile (from `Makefile', line 20)
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /Users/mes-salh/bin:/Users/mes-salh/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+PATH = /Users/mes-salh/bin:/Users/mes-salh/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Users/mes-salh/bin:/Users/mes-salh/goinfre/.brew/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+LaunchInstanceID = FCA77270-4819-4AFD-B8A3-DDE8FC7D00DC
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -54,13 +55,13 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.l5UI7Npzrv/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.T9AYHth2G9/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 HOMEBREW_TEMP = /tmp/mes-salh/Homebrew/Temp
 # environment
-PWD = /Users/mes-salh/Desktop/ps
+PWD = /Users/mes-salh/Desktop/pushswap
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -83,15 +84,17 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
+# environment
+LC_TERMINAL = iTerm2
 # environment
 HOMEBREW_CACHE = /tmp/mes-salh/Homebrew/Caches
 # environment
-SHLVL = 1
-# makefile (from `Makefile', line 18)
+SHLVL = 2
+# makefile (from `Makefile', line 19)
 CC = cc
 # default
 MAKE_VERSION := 3.81
@@ -99,6 +102,10 @@ MAKE_VERSION := 3.81
 USER = mes-salh
 # makefile
 .DEFAULT_GOAL := all
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:B3056215-6469-4CB8-AE48-3A7E4C923A6E
 # makefile (from `Makefile', line 13)
 NAME = push_swap
 # environment
@@ -107,6 +114,8 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# environment
+TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -124,7 +133,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2832
+TERM_PROGRAM_VERSION = 3.4.13
+# environment
+XPC_SERVICE_NAME = com.microsoft.VSCode.2772
+# environment
+LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -132,17 +145,27 @@ VSCODE_L10N_BUNDLE_LOCATION =
 # automatic
 +F = $(notdir $+)
 # environment
+ITERM_SESSION_ID = w0t0p0:B3056215-6469-4CB8-AE48-3A7E4C923A6E
+# environment
+COLORFGBG = 7;0
+# environment
 __CF_USER_TEXT_ENCODING = 0x19404:0:0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
+ITERM_PROFILE = Default
+# environment
 PAGER = less
 # environment
 LC_ALL = C
-# makefile (from `Makefile', line 21)
+# makefile (from `Makefile', line 22)
 HEADER = push_swap.h
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -154,9 +177,11 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 56402
+TERM = xterm-256color
+# environment
+VSCODE_PID = 8022
 # variable set hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=3/104=3%
+# Load=84/1024=8%, Rehash=0, Collisions=6/117=5%
 
 # Pattern-specific Variable Values
 
@@ -164,14 +189,14 @@ VSCODE_PID = 56402
 
 # Directories
 
-# . (device 16777225, inode 4438904): 17 files, no impossibilities.
+# . (device 16777228, inode 4476546): 17 files, no impossibilities.
 
 # 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c push_swap.h
-#  commands to execute (from `Makefile', line 29):
+#  commands to execute (from `Makefile', line 30):
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -182,7 +207,7 @@ VSCODE_PID = 56402
 # Not a target:
 push_swap.c:
 #  Implicit rule search has been done.
-#  Last modified 2024-07-12 23:53:02
+#  Last modified 2024-07-13 04:47:48
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -203,24 +228,6 @@ m: all clean
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-parsing.c:
-#  Implicit rule search has been done.
-#  Last modified 2024-07-13 00:24:13
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-utils.c:
-#  Implicit rule search has been done.
-#  Last modified 2024-07-12 23:38:59
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -233,22 +240,10 @@ ft_strjoin.o:
 #  File has not been updated.
 
 # Not a target:
-split.c:
-#  Implicit rule search has been done.
-#  Last modified 2024-07-11 23:46:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-push_swap.h:
-#  Implicit rule search has been done.
-#  Last modified 2024-07-13 00:22:49
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+rotate.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -257,20 +252,41 @@ push_swap.h:
 #  File has not been updated.
 
 # Not a target:
+push.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-07-12 23:04:18
+#  Last modified 2024-07-13 04:47:56
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+push_swap.h:
+#  Implicit rule search has been done.
+#  Last modified 2024-07-13 04:42:10
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+rev_rotate.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 35):
+#  commands to execute (from `Makefile', line 36):
 	rm -f $(NAME)
 	
 
@@ -291,85 +307,73 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 32):
+#  commands to execute (from `Makefile', line 33):
 	rm -f $(OBJ)
 	
 
 push_swap.o: push_swap.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `push_swap'
-#  Last modified 2024-07-13 00:22:58
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 29):
-	$(CC) $(CFLAGS) -c $< -o $@
-	
-
-push_swap: push_swap.o parsing.o split.o utils.o ft_strjoin.o ft_atoi.o
-#  Implicit rule search has not been done.
-#  Last modified 2024-07-12 23:18:58
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-#  commands to execute (from `Makefile', line 26):
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	
-
-utils.o: utils.c push_swap.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `utils'
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
-# @ := utils.o
+# @ := push_swap.o
 # automatic
 # % := 
 # automatic
-# * := utils
+# * := push_swap
 # automatic
-# + := utils.c push_swap.h
+# + := push_swap.c push_swap.h
 # automatic
 # | := 
 # automatic
-# < := utils.c
+# < := push_swap.c
 # automatic
-# ^ := utils.c push_swap.h
+# ^ := push_swap.c push_swap.h
 # automatic
-# ? := utils.c push_swap.h
+# ? := push_swap.c push_swap.h
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 30):
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+
  
-#  commands to execute (from `Makefile', line 29):
-	$(CC) $(CFLAGS) -c $< -o $@
+push_swap: push_swap.o parsing.o split.o utils.o ft_strjoin.o ft_atoi.o push.o swap.o rotate.o rev_rotate.o
+#  Implicit rule search has not been done.
+#  Last modified 2024-07-13 04:47:57
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+#  commands to execute (from `Makefile', line 27):
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 	
 
-parsing.o: parsing.c push_swap.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `parsing'
-#  Last modified 2024-07-13 00:24:14
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 29):
-	$(CC) $(CFLAGS) -c $< -o $@
-	
+# Not a target:
+utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-split.o: split.c push_swap.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `split'
-#  Last modified 2024-07-13 00:24:14
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 29):
-	$(CC) $(CFLAGS) -c $< -o $@
-	
+# Not a target:
+swap.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+parsing.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+split.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 ft_atoi.o:
@@ -378,7 +382,7 @@ ft_atoi.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=21/1024=2%, Rehash=0, Collisions=3/70=4%
+# Load=22/1024=2%, Rehash=0, Collisions=3/60=5%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -390,6 +394,6 @@ ft_atoi.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Jul 13 00:26:24 2024
+# Finished Make data base on Sat Jul 13 04:48:04 2024
 
  
