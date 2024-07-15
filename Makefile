@@ -6,14 +6,15 @@
 #    By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/11 23:47:56 by mes-salh          #+#    #+#              #
-#    Updated: 2024/07/15 01:25:33 by mes-salh         ###   ########.fr        #
+#    Updated: 2024/07/15 04:11:23 by mes-salh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = push_swap.c parsing.c split.c utils.c ft_strjoin.c ft_atoi.c push.c  \
-		swap.c rotate.c rev_rotate.c helpers.c helpers1.c sort_x.c
+		swap.c rotate.c rev_rotate.c helpers.c helpers1.c sort_x.c indexing.c \
+		algo.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc

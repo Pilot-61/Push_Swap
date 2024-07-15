@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:34:14 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/14 23:22:21 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/15 02:51:51 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ t_list	*ft_lstnew(int content)
 	if (!ptr)
 		return (NULL);
 	ptr->content = content;
+	ptr->index = -3;
 	ptr->next = NULL;
 	return (ptr);
 }

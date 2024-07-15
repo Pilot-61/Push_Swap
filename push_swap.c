@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/14 23:34:25 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/15 05:07:47 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	is_valid_number(const char *str)
 	int		j;
 
 	splited = ft_split(str, ' ');
-	if (!splited || !splited[0])
+	if (!splited || !splited[0] || splited[0][0] == '\t')
 		return (free_arr(splited), 0);
 	j = -1;
 	while (splited[++j])
@@ -92,7 +92,7 @@ int	main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 2)
-		return (ft_putstr(2, "Error"), EXIT_FAILURE);
+		return (0);
 	i = 0;
 	while (++i < ac)
 		if (!is_valid_number(av[i]))
@@ -103,6 +103,7 @@ int	main(int ac, char **av)
 	size = ft_lstsize(stack_a);
 	if (!is_sorted(stack_a))
 		sort_it(&stack_a, &stack_b, size);
-	print_stack(stack_a, 0);
+	index_smallest(&stack_a);
+	// print_stack(stack_a, 0);
 	return (0);
 }
