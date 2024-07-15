@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:34:14 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/13 04:35:55 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/14 23:22:21 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ int	ft_lstsize(t_list *lst)
 		len++;
 	}
 	return (len);
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
@@ -62,28 +71,4 @@ void	ft_lstadd_back(t_list **lst, t_list *news)
 		}
 		news->next = NULL;
 	}
-}
-
-void	ft_putstr(int fd, char *s)
-{
-	if (!s)
-		return ;
-	while (*s)
-		write(fd, s++, 1);
-	write(fd, "\n", 1);
-}
-
-void	free_stack(t_list **stack)
-{
-	t_list	*tmp;
-
-	if (!stack || !*stack)
-		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-	*stack = NULL;
 }

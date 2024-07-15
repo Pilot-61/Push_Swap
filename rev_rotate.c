@@ -6,7 +6,47 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 04:46:36 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/13 04:46:37 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/14 23:22:49 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+int	rev_rot(t_list **stack)
+{
+	t_list	*tmp;
+	t_list	*curr;
+
+	if (!(*stack) || !stack)
+		return (0);
+	curr = *stack;
+	tmp = ft_lstlast(*stack);
+	while (curr->next->next)
+		curr = curr->next;
+	curr->next = NULL;
+	ft_lstadd_front(stack, tmp);
+	return (1);
+}
+
+int	reverse_rt(t_list **stack_a, t_list **stack_b, int flag)
+{
+	if (flag == 3)
+	{
+		if (!rev_rot(stack_a))
+			return (0);
+		ft_putstr(1, "rra");
+	}
+	else if (flag == 4)
+	{
+		if (!rev_rot(stack_b))
+			return (0);
+		ft_putstr(1, "rrb");
+	}
+	else if (flag == 5)
+	{
+		if (!rev_rot(stack_b) || !rev_rot(stack_a))
+			return (0);
+		ft_putstr(1, "rrr");
+	}
+	return (1);
+}

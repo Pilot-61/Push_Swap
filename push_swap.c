@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/13 04:47:48 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/14 23:34:25 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	is_valid_number(const char *str)
 	return (free_arr(splited), 1);
 }
 
-void hello(void){system("leaks push_swap");}
+// void	hello(void){system("leaks push_swap");}
 
 int	fill_stack(t_list **stack_a, char **av)
 {
@@ -80,25 +80,12 @@ int	fill_stack(t_list **stack_a, char **av)
 	return (0);
 }
 
-void	print_stack(t_list *stack, int state)
-{
-	if (state == 0)
-		printf("stack_a: ");
-	else if (state == 1)
-		printf("stack_b: ");
-	while (stack)
-	{
-		printf("%d\t", stack->content);
-		stack = stack->next;
-	}
-	printf("\n");
-}
-
 int	main(int ac, char **av)
 {
 	// atexit(hello);
 	t_list	*stack_a;
 	t_list	*stack_b;
+	int		size;
 	char	*str;
 	int		i;
 
@@ -113,5 +100,9 @@ int	main(int ac, char **av)
 	str = ft_strjoin(ac - 1, av + 1, " ");
 	if (!str || !mes_pars(str) || fill_stack(&stack_a, av) == -1)
 		return (ft_putstr(2, "Error"), 1);
+	size = ft_lstsize(stack_a);
+	if (!is_sorted(stack_a))
+		sort_it(&stack_a, &stack_b, size);
+	print_stack(stack_a, 0);
 	return (0);
 }
