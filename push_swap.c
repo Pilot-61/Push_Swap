@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/15 05:07:47 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/15 23:04:51 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,9 @@ int	main(int ac, char **av)
 	if (!str || !mes_pars(str) || fill_stack(&stack_a, av) == -1)
 		return (ft_putstr(2, "Error"), 1);
 	size = ft_lstsize(stack_a);
+	index_smallest(&stack_a);
 	if (!is_sorted(stack_a))
 		sort_it(&stack_a, &stack_b, size);
-	index_smallest(&stack_a);
 	// print_stack(stack_a, 0);
 	return (0);
 }
