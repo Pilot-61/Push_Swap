@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 01:24:09 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/15 05:26:18 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/16 03:37:23 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ void	sort_it(t_list **stack_a, t_list **stack_b, int size)
 		sort_fo(stack_a, stack_b);
 	else if (size == 5)
 		sort_fi(stack_a, stack_b);
-    else
-        sort_l(stack_a, stack_b);
+	else
+		sort_l(stack_a, stack_b);
 }

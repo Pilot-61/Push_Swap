@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/15 23:04:51 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/16 03:40:36 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ int	is_valid_number(const char *str)
 	return (free_arr(splited), 1);
 }
 
-// void	hello(void){system("leaks push_swap");}
-
 int	fill_stack(t_list **stack_a, char **av)
 {
 	int		i;
@@ -82,7 +80,6 @@ int	fill_stack(t_list **stack_a, char **av)
 
 int	main(int ac, char **av)
 {
-	// atexit(hello);
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		size;
@@ -104,6 +101,6 @@ int	main(int ac, char **av)
 	index_smallest(&stack_a);
 	if (!is_sorted(stack_a))
 		sort_it(&stack_a, &stack_b, size);
-	// print_stack(stack_a, 0);
+	free_stack(&stack_a);
 	return (0);
 }

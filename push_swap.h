@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:55:21 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/15 06:08:46 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/16 03:36:31 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,20 @@ typedef struct s_list
 # define SA	6
 # define SB	7
 # define SS	8
-
+# define PV1 16
+# define PV2 32
 
 // print stack
 void	print_stack(t_list *stack, int state);
 
 void	ft_lstadd_back(t_list **lst, t_list *news);
-void    ft_repeate(t_list **stack, int pos);
 void	index_smallest(t_list **stack_a);
-void    ft_sendback(t_list **stack_a, t_list **stack_b);
+void	ft_sendback(t_list **stack_a, t_list **stack_b);
 int		find_biggest(t_list	*head);
 void	find_positionv2(t_list *stack, int smallest, int index);
 int		find_smallestv2(t_list	*head);
 int		ft_lstsize(t_list *lst);
-void    sort_l(t_list **stack_a, t_list **stack_b);
+void	sort_l(t_list **stack_a, t_list **stack_b);
 t_list	*ft_lstnew(int content);
 char	*ft_strjoin(int size, char **strs, char *sep);
 void	ft_putstr(int fd, char *s);
