@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 00:57:34 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/17 01:46:29 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 04:00:57 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	push_it(t_list **s_from, t_list **s_to)
 int	push_a(t_list **stack_a, t_list **stack_b)
 {
 	if (!push_it(stack_b, stack_a))
-		return (ft_putstr(2, "Error"), 0);
+		return (0);
 	return (1);
 }
 
 int	push_b(t_list **stack_a, t_list **stack_b)
 {
 	if (!push_it(stack_a, stack_b))
-		return (ft_putstr(2, "Error"), 0);
+		return (0);
 	return (1);
 }

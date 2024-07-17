@@ -6,7 +6,7 @@
 #    By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/11 23:47:56 by mes-salh          #+#    #+#              #
-#    Updated: 2024/07/17 01:21:08 by mes-salh         ###   ########.fr        #
+#    Updated: 2024/07/17 04:14:38 by mes-salh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ HEADER = push_swap.h
 HEADERB = push_swap_bonus.h
 
 all: $(NAME)
+
 bonus : $(NAMEB)
 
 $(NAME): $(OBJM)
@@ -45,10 +46,10 @@ $(NAME): $(OBJM)
 $(NAMEB): $(OBJB)
 	$(CC) $(CFLAGS) -o $(NAMEB) $(OBJB)
 
-Mandatory/%.o: Mandatory/%.c $(HEADER)
+Mandatory/%.o: Mandatory/%.c Mandatory/$(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-Bonus/%.o: Bonus/%.c $(HEADERB)
+Bonus/%.o: Bonus/%.c Bonus/$(HEADERB)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

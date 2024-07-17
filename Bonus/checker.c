@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 01:06:17 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/17 01:56:57 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 04:07:44 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,14 @@ int	fill_stack(t_list **stack_a, char **av)
 			return (-1);
 		j = -1;
 		while (splited[++j])
-			ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(splited[j])));
+		{
+			if (!ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(splited[j]))))
+			{
+				free_stack(stack_a);
+				free_arr(splited);
+				exit(EXIT_FAILURE);
+			}
+		}
 		free_arr(splited);
 	}
 	return (0);
@@ -100,15 +107,9 @@ int	main(int ac, char **av)
 		return (ft_putstr(2, "Error"), 1);
 	if (check_opp(&opp) == -1)
 		return (free_stack(&stack_b), free_stack(&stack_a),
-			free_stackv2(&opp), ft_putstr(2, "Error"), 1);
-	if (!stack_a)
-		ft_putstr(0, "KO");
+			fr_stack(&opp), ft_putstr(2, "Error"), 1);
 	make_instractions(&stack_a, &stack_b, &opp);
 	if (ft_lstsize(stack_b) == 0 && is_sorted(stack_a))
-		ft_putstr(0, "OK");
-	else
-		ft_putstr(0, "KO");
-	free_stackv2(&opp);
-	free_stack(&stack_a);
-	return (0);
+		return (ft_putstr(0, "OK"), fr_stack(&opp), free_stack(&stack_a), 0);
+	return (ft_putstr(0, "KO"), fr_stack(&opp), free_stack(&stack_a), 0);
 }

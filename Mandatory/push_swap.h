@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:55:21 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/16 04:10:58 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 04:14:56 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_list
 # define PV1 16
 # define PV2 32
 
-void	ft_lstadd_back(t_list **lst, t_list *news);
+int		ft_lstadd_back(t_list **lst, t_list *news);
 void	index_smallest(t_list **stack_a);
 void	ft_sendback(t_list **stack_a, t_list **stack_b);
 int		find_biggest(t_list	*head);

@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 01:19:27 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/17 01:20:37 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 04:15:29 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strjoinv1(char const *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
 char	*get_next_line(int fd);
-void	ft_lstadd_back(t_list **lst, t_list *news);
+int		ft_lstadd_back(t_list **lst, t_list *news);
 int		ft_lstsize(t_list *lst);
 t_opp	*ft_lstnewv2(char *content);
 t_list	*ft_lstnew(int content);
@@ -77,7 +77,7 @@ int		push_a(t_list **stack_a, t_list **stack_b);
 int		push_b(t_list **stack_a, t_list **stack_b);
 int		check_opp(t_opp **opp);
 void	free_stack(t_list **stack);
-void	free_stackv2(t_opp **opp);
+void	fr_stack(t_opp **opp);
 int		rev(t_list **stack);
 int		reverse(t_list **stack_a, t_list **stack_b, int flag);
 t_list	*ft_lstlast(t_list *lst);

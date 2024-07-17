@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:34:14 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/16 23:42:16 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 03:56:50 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,12 @@ t_list	*ft_lstnew(int content)
 	return (ptr);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *news)
+int	ft_lstadd_back(t_list **lst, t_list *news)
 {
 	t_list	*last;
 
+	if (!news)
+		return (0);
 	if (lst != NULL && news != NULL)
 	{
 		last = *lst;
@@ -72,4 +74,5 @@ void	ft_lstadd_back(t_list **lst, t_list *news)
 		}
 		news->next = NULL;
 	}
+	return (1);
 }

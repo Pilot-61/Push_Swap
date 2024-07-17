@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/16 03:40:36 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 03:55:38 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,15 @@ int	fill_stack(t_list **stack_a, char **av)
 			return (-1);
 		j = -1;
 		while (splited[++j])
-			ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(splited[j])));
+		{
+			if (!ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(splited[j]))))
+			{
+				free_stack(stack_a);
+				free_arr(splited);
+				ft_putstr(2, "Error");
+				exit(EXIT_FAILURE);
+			}
+		}
 		free_arr(splited);
 	}
 	return (0);
