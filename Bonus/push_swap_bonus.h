@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 23:55:21 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/16 04:10:58 by mes-salh         ###   ########.fr       */
+/*   Created: 2024/07/17 01:19:27 by mes-salh          #+#    #+#             */
+/*   Updated: 2024/07/17 01:20:37 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -26,27 +26,41 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct s_opp
+{
+	char			*ptr;
+	struct s_opp	*next;
+}	t_opp;
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 # define RA	0
 # define RB	1
 # define RR	2
-# define RRA	3
-# define RRB	4
-# define RRR	5
+# define RRA 3
+# define RRB 4
+# define RRR 5
 # define SA	6
 # define SB	7
 # define SS	8
-# define PV1 16
-# define PV2 32
 
+char	*ft_strdup(const char *s1);
+size_t	ft_strlen(const char *s);
+int		ft_strcmp(char	*s1, char *s2);
+void	ft_free(char **ptr);
+char	*ft_get_the_next(char *buffer);
+char	*ft_get_the_line(char *buffer);
+char	*ft_read_line(int fd, char *resultat);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strjoinv1(char const *s1, char const *s2);
+char	*ft_strchr(const char *s, int c);
+char	*get_next_line(int fd);
 void	ft_lstadd_back(t_list **lst, t_list *news);
-void	index_smallest(t_list **stack_a);
-void	ft_sendback(t_list **stack_a, t_list **stack_b);
-int		find_biggest(t_list	*head);
-void	find_positionv2(t_list *stack, int smallest, int index);
-int		find_smallestv2(t_list	*head);
 int		ft_lstsize(t_list *lst);
-void	sort_l(t_list **stack_a, t_list **stack_b);
+t_opp	*ft_lstnewv2(char *content);
 t_list	*ft_lstnew(int content);
+void	make_instractions(t_list **stack_a, t_list **stack_b, t_opp **opp);
 char	*ft_strjoin(int size, char **strs, char *sep);
 void	ft_putstr(int fd, char *s);
 char	**ft_split(char const *s, char c);
@@ -61,7 +75,9 @@ int		mes_len(const char *s, char c);
 int		push_it(t_list **s_from, t_list **s_to);
 int		push_a(t_list **stack_a, t_list **stack_b);
 int		push_b(t_list **stack_a, t_list **stack_b);
+int		check_opp(t_opp **opp);
 void	free_stack(t_list **stack);
+void	free_stackv2(t_opp **opp);
 int		rev(t_list **stack);
 int		reverse(t_list **stack_a, t_list **stack_b, int flag);
 t_list	*ft_lstlast(t_list *lst);
@@ -70,11 +86,4 @@ int		rev_rot(t_list **stack);
 int		swap_s(t_list **stack);
 int		swap_x(t_list **stack_a, t_list **stack_b, int flag);
 int		is_sorted(t_list *stack);
-void	sort_it(t_list **stack_a, t_list **stack_b, int size);
-void	sort_fo(t_list **stack_a, t_list **stack_b);
-int		find_smallest(t_list	*head);
-void	positioning(t_list *stack);
-int		find_smallest(t_list	*head);
-int		find_position(t_list *stack, int smallest);
-void	sort_fi(t_list **stack_a, t_list **stack_b);
 #endif
