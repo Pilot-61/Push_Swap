@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 01:06:17 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/17 01:25:09 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 01:56:57 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,15 +98,16 @@ int	main(int ac, char **av)
 	str = ft_strjoin(ac - 1, av + 1, " ");
 	if (!str || !mes_pars(str) || fill_stack(&stack_a, av) == -1)
 		return (ft_putstr(2, "Error"), 1);
-	puts("here");
 	if (check_opp(&opp) == -1)
 		return (free_stack(&stack_b), free_stack(&stack_a),
 			free_stackv2(&opp), ft_putstr(2, "Error"), 1);
+	if (!stack_a)
+		ft_putstr(0, "KO");
 	make_instractions(&stack_a, &stack_b, &opp);
-	if (is_sorted(stack_a) && ft_lstsize(stack_b) == 0)
-		ft_putstr(1, "OK");
+	if (ft_lstsize(stack_b) == 0 && is_sorted(stack_a))
+		ft_putstr(0, "OK");
 	else
-		ft_putstr(1, "KO");
+		ft_putstr(0, "KO");
 	free_stackv2(&opp);
 	free_stack(&stack_a);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 02:17:20 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/17 01:28:15 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 01:51:20 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	is_sorted(t_list *stack)
 {
+	if (!stack)
+		return (-1);
 	while (stack->next)
 	{
 		if (stack->content > stack->next->content)
@@ -71,7 +73,6 @@ void	check_it(t_opp *tmp, t_list **stack_a, t_list **stack_b)
 		reverse_rt(stack_a, stack_b, RRB);
 	else if (!ft_strcmp(tmp->ptr, "rrr\n"))
 		reverse_rt(stack_a, stack_b, RRR);
-	tmp = tmp->next;
 }
 
 void	make_instractions(t_list **stack_a, t_list **stack_b, t_opp **opp)
@@ -80,5 +81,8 @@ void	make_instractions(t_list **stack_a, t_list **stack_b, t_opp **opp)
 
 	tmp = *opp;
 	while (tmp)
+	{
 		check_it(tmp, stack_a, stack_b);
+		tmp = tmp->next;
+	}
 }

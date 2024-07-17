@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 00:57:34 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/17 00:30:09 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/07/17 01:46:29 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	push_it(t_list **s_from, t_list **s_to)
 {
 	t_list	*tmp;
 
-	if (!*s_from)
+	if (!*s_from || !s_from)
 		return (0);
 	tmp = *s_from;
 	*s_from = (*s_from)->next;
