@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:26 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/07/17 03:55:38 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/10/01 20:54:54 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,12 @@ int	is_valid_number(const char *str)
 		i = 0;
 		while (splited[j][i] == ' ')
 			i++;
-		if (splited[j][i++] == '-' || splited[j][i] == '+')
-			if (!is_num(splited[j][i]))
-				return (free_arr(splited), 0);
+		if (splited[j][i] == '\0' ||
+			(splited[j][i] != '-' && splited[j][i] != '+' &&
+				!is_num(splited[j][i])))
+			return (free_arr(splited), 0);
+		if (splited[j][i] == '-' || splited[j][i] == '+')
+			i++;
 		while (splited[j][i])
 		{
 			if (!is_num(splited[j][i]))
