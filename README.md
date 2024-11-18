@@ -22,6 +22,7 @@ Push Swap is a sorting algorithm challenge where you must sort a stack of intege
 ## 📦 Compilation
 ```bash
 make           # Compile push_swap
+make bonus     # Compile checker (optional)
 ```
 
 ## 🚀 Usage
